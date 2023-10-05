@@ -1,34 +1,15 @@
 arduino-display-test
 ====================
 
-Rust project for the _Arduino Uno_.
+Test for Adafruit 240x240 1.54" display with mipidsi
 
-## Build Instructions
-1. Install prerequisites as described in the [`avr-hal` README] (`avr-gcc`, `avr-libc`, `avrdude`, [`ravedude`]).
+# Connections
+V+ -> Arduino 5V
+G  -> Arduino GND
+CK -> Arduino D13
+SI -> Arduino D11
+TC -> Arduino D10
+RT -> Arduino D9
+DC -> Arduino D8
 
-2. Run `cargo build` to build the firmware.
-
-3. Run `cargo run` to flash the firmware to a connected board.  If `ravedude`
-   fails to detect your board, check its documentation at
-   <https://crates.io/crates/ravedude>.
-
-4. `ravedude` will open a console session after flashing where you can interact
-   with the UART console of your board.
-
-[`avr-hal` README]: https://github.com/Rahix/avr-hal#readme
-[`ravedude`]: https://crates.io/crates/ravedude
-
-## License
-Licensed under either of
-
- - Apache License, Version 2.0
-   ([LICENSE-APACHE](LICENSE-APACHE) or <http://www.apache.org/licenses/LICENSE-2.0>)
- - MIT license
-   ([LICENSE-MIT](LICENSE-MIT) or <http://opensource.org/licenses/MIT>)
-
-at your option.
-
-## Contribution
-Unless you explicitly state otherwise, any contribution intentionally submitted
-for inclusion in the work by you, as defined in the Apache-2.0 license, shall
-be dual licensed as above, without any additional terms or conditions.
+Wiring is according to https://learn.adafruit.com/adafruit-1-3-and-1-54-240-x-240-wide-angle-tft-lcd-displays/arduino-wiring-test and works with the example

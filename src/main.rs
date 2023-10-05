@@ -23,7 +23,7 @@ fn main() -> ! {
 
     //let mut serial = arduino_hal::default_serial!(dp, pins, 57600);
 
-    let (mut spi, _) = arduino_hal::Spi::new(
+    let (mut spi, tcs) = arduino_hal::Spi::new(
         dp.SPI,
         pins.d13.into_output(),
         pins.d11.into_output(),
@@ -32,8 +32,8 @@ fn main() -> ! {
         spi::Settings::default(),
     );
 
-    //let di = SPIInterface::new(spi, pins.d8.into_output(), pins.d7.into_output());
-    let di = SPIInterfaceNoCS::new(spi, pins.d8.into_output());
+    let di = SPIInterface::new(spi, pins.d8.into_output(), tcs);
+    //let di = SPIInterfaceNoCS::new(spi, pins.d8.into_output());
     let mut delay = Delay::new();
 
     let mut display = Builder::st7789(di)
